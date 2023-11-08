@@ -4,6 +4,7 @@ import 'package:flutter_hooks_learn/existing_hooks_page.dart';
 import 'package:flutter_hooks_learn/flip_image_2_page.dart';
 import 'package:flutter_hooks_learn/flip_image_page.dart';
 import 'package:flutter_hooks_learn/future_memoized_page.dart';
+import 'package:flutter_hooks_learn/life_cycle_page.dart';
 import 'package:flutter_hooks_learn/scroll_image_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -84,6 +85,18 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: ((context) => const FlipImage2Page()),
+                  ),
+                );
+              },
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              child: const Text('Go to Life Cycle Page'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => const LifeCyclePage()),
                   ),
                 );
               },
