@@ -13,7 +13,9 @@ part 'main.g.dart';
 final nameProvider = Provider<String>((ref) => 'A String');
 
 // StateProvider: is great for storing simple state objects that can change, such as a counter value
-final nameStateProvider = StateProvider.autoDispose<String?>((ref) => null);
+final counterProvider = StateProvider.autoDispose<int>((ref) {
+  return 0;
+});
 
 // StateNotifier and StateNoitifierProvider: ideal for managing state that may change in reaction to an event or user interaction.
 final userProvider = StateNotifierProvider.autoDispose<UserNotifier, User>(
