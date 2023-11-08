@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks_learn/countdown_page.dart';
 import 'package:flutter_hooks_learn/existing_hooks_page.dart';
+import 'package:flutter_hooks_learn/flip_image_page.dart';
 import 'package:flutter_hooks_learn/future_memoized_page.dart';
 import 'package:flutter_hooks_learn/scroll_image_page.dart';
 
@@ -58,6 +59,18 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: ((context) => const ScrollImagePage()),
+                  ),
+                );
+              },
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              child: const Text('Go to Flip Image Page'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => const FlipImagePage()),
                   ),
                 );
               },
