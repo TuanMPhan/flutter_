@@ -16,8 +16,8 @@ extension CompactMap<T> on Iterable<T?> {
 
 const url = 'https://bit.ly/3qYOtDm';
 
-class OtherPage extends HookWidget {
-  const OtherPage({super.key});
+class FutureMemoizedPage extends HookWidget {
+  const FutureMemoizedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
