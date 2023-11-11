@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "644935579591",
+    "project_id": "queries-practice-38094",
+    "storage_bucket": "queries-practice-38094.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644935579591:android:0055d8b732065b88014be2",
+        "android_client_info": {
+          "package_name": "com.example.firebase_queries"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFgj7A_FxZgYDLU1SoIb0Jauk0m4J02lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
