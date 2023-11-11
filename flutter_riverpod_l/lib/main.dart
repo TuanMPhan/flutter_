@@ -5,6 +5,8 @@ import 'package:flutter_riverpod_l/logger_riverpod.dart';
 import 'package:flutter_riverpod_l/user.dart';
 import 'package:flutter_riverpod_l/user_future.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:web_socket_channel/io.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 part 'main.g.dart';
 
 // Providers
@@ -50,15 +52,28 @@ Future<UserFuture> fetchUserFuture(FetchUserFutureRef ref, String input) {
 /// listening to firebase or web-sockets
 /// rebuilding another provider every few seconds
 /// video streaming, weather broadcasting apis or live chat
-final streamProvider = StreamProvider.autoDispose((ref) async* {
-  List<int> list = [];
-  for (var i = 0; i < 21; i++) {
-    await Future.delayed(const Duration(seconds: 1));
-    list = [...list, i];
-    yield list;
+// final streamProvider = StreamProvider.autoDispose((ref) async* {
+//   List<int> list = [];
+//   for (var i = 0; i < 21; i++) {
+//     await Future.delayed(const Duration(seconds: 1));
+//     list = [...list, i];
+//     yield list;
+//   }
+// });
+
+final messageProvider = StreamProvider.autoDispose<String>((ref) async* {
+  // Open the connection
+  final channel =
+      IOWebSocketChannel.connect(Uri.parse('wss://echo.websocket.events'));
+
+  // Close the connection when the stream is destroyed
+  ref.onDispose(() => channel.sink.close());
+
+  // Parse the value received and emit a Message instance
+  await for (final value in channel.stream) {
+    yield value.toString();
   }
 });
-
 void main() {
   runApp(
     ProviderScope(

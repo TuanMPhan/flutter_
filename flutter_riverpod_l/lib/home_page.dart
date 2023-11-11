@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_l/change_notifier_page.dart';
+import 'package:flutter_riverpod_l/todo_async_page.dart';
+import 'package:flutter_riverpod_l/todo_page.dart';
 import 'package:flutter_riverpod_l/future_provider_page.dart';
 import 'package:flutter_riverpod_l/provider_page.dart';
 import 'package:flutter_riverpod_l/state_notifier_page.dart';
@@ -84,6 +86,30 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: ((context) => const StreamProviderPage()),
+                  ),
+                );
+              },
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              child: const Text('Go to Todo Page'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => const TodoListPage()),
+                  ),
+                );
+              },
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              child: const Text('Go to TodoAsync Page'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => const TodoAsyncListPage()),
                   ),
                 );
               },

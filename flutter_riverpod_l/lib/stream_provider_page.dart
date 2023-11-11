@@ -8,25 +8,20 @@ class StreamProviderPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    AsyncValue<String> message = ref.watch(messageProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Stream Provider Page'),
+        title: const Text('Stream provider page'),
       ),
-      body: ref.watch(streamProvider).when(
-        data: (data) {
-          return Text(data.toString());
-        },
-        error: (error, stackTrace) {
-          return Center(
-            child: Text(error.toString()),
-          );
-        },
-        loading: () {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        },
+      body: Center(
+        child: message.when(
+          loading: () => const CircularProgressIndicator(),
+          error: (err, stack) => Text('Error: $err'),
+          data: (message) {
+            return Text(message);
+          },
+        ),
       ),
     );
   }
