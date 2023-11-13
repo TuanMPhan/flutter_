@@ -1,16 +1,9 @@
 # learn_firebase
 
-A new Flutter project.
+1. Add a user to the database. [Create User Page](https://github.com/TuanMPhan/flutter_/blob/main/learn_firebase/lib/create_user_page.dart)
 
-## Getting Started
+2. Get all documents/users. [Get User Page](https://github.com/TuanMPhan/flutter_/blob/main/learn_firebase/lib/read_user_page.dart)
 
-This project is a starting point for a Flutter application.
+3. Get 1 user only. [Get Single User Page](https://github.com/TuanMPhan/flutter_/blob/main/learn_firebase/lib/read_single_user.dart)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. Update the name of a user with a specific document id. [Update Page](https://github.com/TuanMPhan/flutter_/blob/main/learn_firebase/lib/update.dart)

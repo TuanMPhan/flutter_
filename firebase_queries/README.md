@@ -1,16 +1,7 @@
 # firebase_queries
 
-A new Flutter project.
+Running basic queries to add/get data to/from firestore. 
 
-## Getting Started
+# [main.dart](https://github.com/TuanMPhan/flutter_/blob/main/firebase_queries/lib/main.dart)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# [queries.dart](https://github.com/TuanMPhan/flutter_/blob/main/firebase_queries/lib/queries.dart)
