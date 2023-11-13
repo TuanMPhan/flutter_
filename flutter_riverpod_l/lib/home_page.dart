@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod_l/change_notifier_page.dart';
-import 'package:flutter_riverpod_l/todo_async_page.dart';
-import 'package:flutter_riverpod_l/todo_page.dart';
-import 'package:flutter_riverpod_l/future_provider_page.dart';
-import 'package:flutter_riverpod_l/provider_page.dart';
-import 'package:flutter_riverpod_l/state_notifier_page.dart';
-import 'package:flutter_riverpod_l/state_provider_page.dart';
-import 'package:flutter_riverpod_l/stream_provider_page.dart';
+import 'package:flutter_riverpod_l/legacy_provider_pages/change_notifier_page.dart';
+import 'package:flutter_riverpod_l/legacy_provider_pages/future_provider_page.dart';
+import 'package:flutter_riverpod_l/legacy_provider_pages/provider_page.dart';
+import 'package:flutter_riverpod_l/legacy_provider_pages/state_notifier_page.dart';
+import 'package:flutter_riverpod_l/legacy_provider_pages/state_provider_page.dart';
+import 'package:flutter_riverpod_l/legacy_provider_pages/stream_provider_page.dart';
+import 'package:flutter_riverpod_l/new_features_pages/todo_async_page.dart';
+import 'package:flutter_riverpod_l/new_features_pages/todo_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

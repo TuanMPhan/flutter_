@@ -14,13 +14,13 @@ class TodoAsync {
 
   factory TodoAsync.fromJson(Map<String, dynamic> map) {
     return TodoAsync(
-      id: map['id'] as int,
+      id: map['id'].toString(),
       todo: map['todo'] as String,
       completed: map['completed'] as bool,
     );
   }
 
-  final int id;
+  final String id;
   final String todo;
   final bool completed;
 
@@ -50,7 +50,7 @@ class AsyncTodosNotifier extends AsyncNotifier<List<TodoAsync>> {
     state = const AsyncValue.loading();
 
     state = await AsyncValue.guard(() async {
-      await http.post(Uri.parse('https://dummyjson.com/todos'),
+      await http.post(Uri.parse('https://dummyjson.com/todos/add'),
           body: todo.toJson());
       return _fetchTodo();
     });
@@ -66,12 +66,12 @@ class AsyncTodosNotifier extends AsyncNotifier<List<TodoAsync>> {
   }
 
   // Let's mark a todo as completed
-  Future<void> toggle(int todoId) async {
+  Future<void> toggle(String todoId) async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
       await http.patch(
         Uri.parse('https://dummyjson.com/todos/$todoId'),
-        body: <String, dynamic>{'completed': true},
+        body: <String, dynamic>{'completed': 'true'},
       );
       return _fetchTodo();
     });

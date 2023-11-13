@@ -52,28 +52,15 @@ Future<UserFuture> fetchUserFuture(FetchUserFutureRef ref, String input) {
 /// listening to firebase or web-sockets
 /// rebuilding another provider every few seconds
 /// video streaming, weather broadcasting apis or live chat
-// final streamProvider = StreamProvider.autoDispose((ref) async* {
-//   List<int> list = [];
-//   for (var i = 0; i < 21; i++) {
-//     await Future.delayed(const Duration(seconds: 1));
-//     list = [...list, i];
-//     yield list;
-//   }
-// });
-
-final messageProvider = StreamProvider.autoDispose<String>((ref) async* {
-  // Open the connection
-  final channel =
-      IOWebSocketChannel.connect(Uri.parse('wss://echo.websocket.events'));
-
-  // Close the connection when the stream is destroyed
-  ref.onDispose(() => channel.sink.close());
-
-  // Parse the value received and emit a Message instance
-  await for (final value in channel.stream) {
-    yield value.toString();
+final streamProvider = StreamProvider.autoDispose((ref) async* {
+  List<int> list = [];
+  for (var i = 0; i < 21; i++) {
+    await Future.delayed(const Duration(seconds: 1));
+    list = [...list, i];
+    yield list;
   }
 });
+
 void main() {
   runApp(
     ProviderScope(
